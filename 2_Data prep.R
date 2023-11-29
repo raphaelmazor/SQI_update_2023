@@ -81,7 +81,9 @@ var_names_before_modeling<-
     
 
     
-    
+#Alternatively, read and export sqi_dat
+sqi_dat <- read_csv("NotForGit/Step1/sqi_dat.csv")
+write_csv(sqi_dat, "NotForGit/Step2/sqi_dat_step2.csv")    
     
     
     

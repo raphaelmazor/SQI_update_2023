@@ -11,8 +11,10 @@ library(tidymodels)
 # Impacted for CSCI
 
 
+#First, randomly pick one date per site
 
 #Use initial_split in tidy models to split the data 80/20 into model training and model testing data subsets
+# set.seed to ensure consistency of split
 
 #Chem model
 #Create a model (glm) to predict the likelihood of impacted biology (any index) given TN, TP, and SpCond

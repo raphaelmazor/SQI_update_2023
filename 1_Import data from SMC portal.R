@@ -12,12 +12,11 @@ library(lubridate)
 #Create the connection
 con <- dbConnect(
   PostgreSQL(),
-  host = "geobiology.cottkh4djef2.us-west-2.rds.amazonaws.com",
+  host = 'geobiology.cottkh4djef2.us-west-2.rds.amazonaws.com',
   dbname = 'smc',
-  user='smcread',
-  password='1969$Harbor'
+  user = 'sde',
+  password = '39b86cjRDX'
 )
-
 #Stations data
 lustations_df<-dbGetQuery(con, sql(
   "SELECT *
@@ -90,6 +89,15 @@ FROM
 sde.unified_chemistry"
 )) %>% as_tibble()
 
+
+#Alternatively just use this! And skip Step2
+sqi_dat<-dbGetQuery(con, sql(
+  "SELECT *
+FROM
+vw_sqi_dat"
+)) %>% as_tibble()
+
+
 #Export everything
 write_csv(lustations_df, "NotForGit/Step1/lustations_df.csv")
 write_csv(chansum_df, "NotForGit/Step1/chansum_df.csv")
@@ -99,5 +107,5 @@ write_csv(ipi_df, "NotForGit/Step1/ipi_df.csv")
 write_csv(nutrients_df, "NotForGit/Step1/nutrients_df.csv")
 write_csv(cond_df, "NotForGit/Step1/cond_df.csv")
 write_csv(chem_df, "NotForGit/Step1/chem_df.csv")
-
+write_csv(sqi_dat, "NotForGit/Step1/sqi_dat.csv")
 
