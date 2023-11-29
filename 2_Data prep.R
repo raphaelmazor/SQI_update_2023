@@ -10,8 +10,8 @@
 #-Take the HIGHEST CSCI score
 #-Take the HIGHEST ASCI score
 #-Take the AVERAGE of all other data (only applies to chem; no same-day replicates for habitat data)
-#Once this is done, take the AVERAGE across visit-dates
 
+#Once the data are aggregated into a single dataframe, export it into "NotForGit/Step2"
 
 
 #Then, put into a wide-format table, with one row per site
@@ -79,7 +79,7 @@ var_names_before_modeling<-
   )
     
     
-    
+
     
     
     
